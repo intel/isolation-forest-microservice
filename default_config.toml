@@ -1,0 +1,7 @@
+task = "showcase"
+dataset = "SAT_KURT"
+compare = true
+generate_optimized_model = true
+generate_classic_model = true
+saved_model_name = "model"
+path = "model_QUANTIZED.model"

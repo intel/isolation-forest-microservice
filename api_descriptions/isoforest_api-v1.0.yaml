@@ -1,0 +1,85 @@
+swagger: '2.0'
+info:
+  title: Isolation Forest Microservice OpenAPI Description
+  description: |
+    This API provides access to the Isolation Forest Training and Inference Microservice.
+  version: 1.0.0
+  license:
+    name: MIT
+paths:
+  /status:
+    get:
+      summary: Gets current service status
+      description: Fetches the status of the service, including any existing datasets or models in the service.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful request
+
+  /datasets:
+    get:
+      summary: Gets current datasets
+      description: Fetches the datasets currently uploaded to the service, including any known information about them.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful request
+
+  /models:
+    get:
+      summary: Gets current models
+      description: Fetches the models stored in the service, including any known information about them.
+      parameters:
+        - in: body
+          name: modelid
+          type: string
+          required: true
+          description: id of the model
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful request
+
+  /results:
+    get:
+      summary: Gets current results.
+      description: Fetches the inference results of the service.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful request
+
+  /data/upload:
+    post:
+      summary: Upload a dataset
+      description: Upload a dataset for training or testing.
+      responses:
+        '200':
+          description: dataset uploaded
+        '400':
+          description: bad request, something went wrong
+  /train:
+    post:
+      summary: Start training
+      description: Train a model using an uploaded dataset.
+      responses:
+        '200':
+          description: training started
+        '400':
+          description: bad request, something went wrong
+  /infer:
+    post:
+      summary: Start inference
+      description: Use an existing model and dataset for inference.
+      responses:
+        '200':
+          description: training started
+        '400':
+          description: bad request, something went wrong
+host: localhost:9001
+schemes:
+  - http
