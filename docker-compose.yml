@@ -1,0 +1,42 @@
+services:
+  isoforest_microservice:
+    image: intel/isoforest_microservice:latest
+    container_name: isoforest_microservice
+    hostname: isoforest_microservice
+    read_only: true
+    build:
+      context: $PWD
+      dockerfile: Dockerfile
+    environment:
+      - PYENV_ROOT="$HOME/.pyenv"
+      - PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$HOME/.pyenv/bin:$PATH"
+    healthcheck:
+      test: ["CMD-SHELL", "exit", "0"]
+      interval: 5m
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+    security_opt:
+      - no-new-privileges
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1024M
+      restart_policy: 
+        condition: on-failure
+        max_attempts: 5 
+    ports:
+      - 9001:9001
+    volumes:
+      - storage:/storage/
+      - "./datasets:/datasets"
+
+volumes:
+  storage:
+    name: "storage"
+    driver: local
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  datasets:
