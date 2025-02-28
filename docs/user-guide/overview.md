@@ -25,7 +25,7 @@ MEMORY-EFFICIENT SYSTEM FOR DECISION TREE MACHINE LEARNING, Patent filed # 17/12
 ![An image of the optimized data discretization algorithm](images/ODD_flowchart.png)
 
 ## Licensing Information
-This repository is licensed under the MIT license [LICENSE](License.txt). This project also utilizes the Random Forest algorithm provided by SciKit Learn, which is licensed under the BSD 3-Clause License. Information on that algorithms license can be found at their repository [here](https://github.com/scikit-learn/scikit-learn/tree/main).
+This repository is licensed under the Apache 2.0 license [LICENSE](License.txt). This project also utilizes the Random Forest algorithm provided by SciKit Learn, which is licensed under the BSD 3-Clause License. Information on that algorithms license can be found at their repository [here](https://github.com/scikit-learn/scikit-learn/tree/main).
 
 ## Learn More
 
