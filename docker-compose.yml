@@ -1,6 +1,6 @@
 services:
   isoforest_microservice:
-    image: intel/isoforest_microservice:latest
+    image: intel/isoforest_microservice:2025
     container_name: isoforest_microservice
     hostname: isoforest_microservice
     read_only: true
@@ -31,6 +31,8 @@ services:
     volumes:
       - storage:/storage/
       - "./datasets:/datasets"
+    cap_drop:
+      - NET_RAW
 
 volumes:
   storage:

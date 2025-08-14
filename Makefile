@@ -28,9 +28,9 @@ else
 endif
 
 install_deps:
-	@printf "${LIGHTPURPLE}Installing Go 1.23.3 64-bit...${RESET}\n"
-	wget https://golang.org/dl/go1.23.3.linux-amd64.tar.gz
-	tar -C /usr/local -xzf go1.23.3.linux-amd64.tar.gz
+	@printf "${LIGHTPURPLE}Installing Go 1.24.6 64-bit...${RESET}\n"
+	wget https://golang.org/dl/go1.24.6.linux-amd64.tar.gz
+	tar -C /usr/local -xzf go1.24.6.linux-amd64.tar.gz
 	@echo "export PATH=$$PATH:/usr/local/go/bin" >> ~/.bashrc
 	exec $$SHELL
 
