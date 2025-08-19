@@ -1,4 +1,4 @@
-# Isolation Forest Classifier Microservice
+# Optimized Isolation Forest Classifier Training and Inference Microservice 
 The Optimized Isolation Forest Classifier: Training and Inference Microservice, or ISOForest, is an isolation forest classifier creation and inference tool designed to use new Intel-desigend optimization techniques to create smaller, faster, and still as accurate isolation forest models for classification and regression tasks.
 
 ISOForest is delivered as a flexible microservice, capable of being used either on its own through its RESTful HTTP API or integrated into a wider microservice-based system.
